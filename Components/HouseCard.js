@@ -11,6 +11,7 @@ import FontAwesome from '@expo/vector-icons/FontAwesome'
 import Ionicons from '@expo/vector-icons/Ionicons'
 
 export default function HouseCard ({
+  id,
   name,
   address,
   bedrooms,
@@ -19,20 +20,20 @@ export default function HouseCard ({
   cost,
   rating,
   image,
-  addToLikes,
-  liked,
-  setLiked
+  houseObject,
+  houses,
+  setLikedHouse
 }) {
+  const isLiked = houseObject
+  console.log('isLiked', isLiked)
+  //console.log('houseobjectyo', typeof houseObject)
   return (
     <View style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <View style={styles.ratingContainer}>
-          <Image
-            style={styles.image}
-            source={image}
-          />
+          <Image style={styles.image} source={image} />
           <View style={styles.rating}>
-          <FontAwesome
+            <FontAwesome
               style={styles.icon}
               name='star' //Nombre que sale en la pagina
               size={9}
@@ -78,24 +79,43 @@ export default function HouseCard ({
           </View>
           <View style={styles.costContainer}>
             <Text style={styles.costText}>{cost}</Text>
-            <Pressable onPress={() => setLiked(true)}>
-            
-            {liked? <FontAwesome
-                style={styles.iconHeart}
-                name='heart' //Nombre que sale en la pagina
-                size={12}
-                color='white'
-              />
-              :
-              <FontAwesome
-                style={styles.iconHeart}
-                name='heart' //Nombre que sale en la pagina
-                size={12}
-                color='red'
-              />
-              }
-              
-            </Pressable>
+
+            <TouchableOpacity
+              onPress={() => setLikedHouse(name)}
+              activeOpacity={0.5}
+                
+              //onPressOut={()=>isLiked(name)}
+            >
+              {isLiked ? (
+                <FontAwesome
+                  style={{
+                    backgroundColor: '#D32445',
+                    padding: 6.2,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 100,
+                    marginTop: 5
+                  }}
+                  name='heart' //Nombre que sale en la pagina
+                  size={12}
+                  color='white'
+                />
+              ) : (
+                <FontAwesome
+                  style={{
+                    backgroundColor: '#00B074',
+                    padding: 6.2,
+                    width: 24,
+                    height: 24,
+                    borderRadius: 100,
+                    marginTop: 5
+                  }}
+                  name='heart' //Nombre que sale en la pagina
+                  size={12}
+                  color='white'
+                />
+              )}
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -120,31 +140,29 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center'
   },
-  ratingContainer:{
+  ratingContainer: {
     display: 'flex',
     flexDirection: 'column',
     //backgroundColor: 'red',
-    alignItems:'center'
-
+    alignItems: 'center'
   },
-  rating:{
+  rating: {
     backgroundColor: '#FBEEB7',
-    width:40,
-    height:20,
-    borderRadius:9,
-    display:'flex',
-    flexDirection:'row',
-    justifyContent:'space-evenly',
-    alignItems:'center',
-    position:'absolute',
-    marginTop:85
-    
+    width: 40,
+    height: 20,
+    borderRadius: 9,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    position: 'absolute',
+    marginTop: 85
   },
-  ratingText:{
-      color:"#7A6229",
-      fontWeight:'bold',
-      textAlign:'center',
-      fontSize:10
+  ratingText: {
+    color: '#7A6229',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 10
   },
   image: {
     width: 95,

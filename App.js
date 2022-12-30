@@ -1,25 +1,63 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import HouseCard from './Components/HouseCard'
 
 const data = require('./data.json')
 
 export default function App () {
-  const [liked, setLiked] = useState(false)
-  
-  const addToLikes = pushed => {
+  const [houses, setHouses] = useState([])
 
-    setLiked(!liked)
+  useEffect(() => {
+    console.log('effect')
 
-/*
-    const alreadyLiked = liked.find(like => like === pushed)
-    alreadyLiked
-      ? setLiked(liked.filter(like => like !== pushed))
-      : setLiked(liked.concat(pushed))*/
- 
-    console.log('liked', liked)
-    console.log('pushed:', pushed)
+    data.map(info =>
+      setHouses(houses => {
+        return houses.concat({ name: info.name, liked: false })
+      })
+    )
+  }, [])
+
+  //houses.map(house=>console.log("house",house))
+
+  const liked = name => {
+    const houseObject = houses.find(house => house.name === name)
+    const houseLiked = houseObject?.liked
+    //console.log('houseobjects', houseObject?.liked)
+    //console.log("XXX",houseObject.liked)
+    return houseLiked
+  }
+
+  const setLikedHouse = name => {
+    let equalName = houses.find(house => (house.name === name ? setHouses : ''))
+
+    let newHouseLiked = {
+      name: equalName.name,
+      liked: true
+    }
+    let newHouseUnLiked = {
+      name: equalName.name,
+      liked: false
+    }
+    let newHouses = []
+    equalName.liked
+      ? (newHouses = houses.map(house =>
+          house.name === equalName.name
+            ? (house = { ...house, liked: false })
+            : house
+        ))
+      : (newHouses = houses.map(house =>
+          house.name === equalName.name
+            ? (house = { ...house, liked: true })
+            : house
+        ))
+    //console.log('newHOuses', newHouses)
+    setHouses(newHouses)
+    //console.log('Houses', houses)
+    //console.log('equal', equalName)
+    //console.log('newHouseLiked', newHouseLiked)
+
+    // setHouses(house=>house.name==equalName.name? house.liked=true:'')
   }
 
   return (
@@ -29,7 +67,7 @@ export default function App () {
           {data.map(info => {
             return (
               <HouseCard
-                key={info.name}
+                key={info.id}
                 image={info.image}
                 name={info.name}
                 address={info.address}
@@ -38,9 +76,9 @@ export default function App () {
                 size={info.size}
                 cost={info.cost}
                 rating={info.rating}
-                addToLikes={addToLikes}
-                liked={liked}
-                setLiked={setLiked}
+                houseObject={liked(info.name)}
+                houses={houses}
+                setLikedHouse={setLikedHouse}
               />
             )
           })}
@@ -53,7 +91,7 @@ export default function App () {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    
+
     backgroundColor: '#E5E5E5'
   },
   container: {
