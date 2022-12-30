@@ -1,21 +1,25 @@
 [
     {
-        "image":"https://es.digitaltrends.com/wp-content/uploads/2021/11/simpson-casa.jpg?fit=720%2C720&p=1",
+        "image":"data:image/jpg;base64,https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
         "name":"The Willows",
         "address":"3517 W. Gray St. Utica",
         "bedrooms":3,
         "bathrooms":2,
         "size":"230 ft2",
-        "cost":"$440/m"
+        "cost":"$440/m",
+        "rating":4.5
+        
     },
     {
         "image":"https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+      
         "name":"Orchard House",
         "address":"Evergreen Terrace 742",
         "bedrooms":4,
         "bathrooms":3,
         "size":"410 ft2",
-        "cost":"$587/m"
+        "cost":"$587/m",
+        "rating":4.7
     },
     {
         "image":"https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
@@ -24,7 +28,8 @@
         "bedrooms":2,
         "bathrooms":1,
         "size":"150 ft2",
-        "cost":"$197/m"
+        "cost":"$197/m",
+        "rating":4.2
     },
     {
         "image":"https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
@@ -33,7 +38,8 @@
         "bedrooms":4,
         "bathrooms":4,
         "size":"471 ft2",
-        "cost":"$612/m"
+        "cost":"$612/m",
+        "rating":4.9
     },
     {
         "image":"https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
@@ -42,7 +48,8 @@
         "bedrooms":1,
         "bathrooms":1,
         "size":"86 ft2",
-        "cost":"$96/m"
+        "cost":"$96/m",
+        "rating":3.9
     },
     {
         "image":"https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
@@ -51,6 +58,7 @@
         "bedrooms":2,
         "bathrooms":1,
         "size":"176 ft2",
-        "cost":"$202/m"
+        "cost":"$202/m",
+        "rating":4.3
     }
 ]
