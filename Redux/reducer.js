@@ -10,39 +10,40 @@ export const actionQuitLike = {
 
 const initialState = []
 data.map(info => initialState.push({ name: info.name, liked: false }))
-//console.log('INITIALSTATE___:', initialState)
+console.log('INITIALSTATE___:', initialState)
+let modState = [...initialState]
 
-function addLikeReducer (state = initialState, action) {
+export const addLikeReducer = (state = modState, action) => {
   switch (action.type) {
-    case ADD_LIKED_HOUSE:
-      initialState.map(house => {
+    case 'ADD_LIKED_HOUSE':
+      console.log('ESTOY EN ADD LIKED HOUSE')
+      modState = modState.map(house => {
         if (house.name === action.payload.name) {
+          console.log('ESTOY EN IF ADD_ LIKED HOUSE')
           return {
             ...house,
             liked: true
           }
         }
-        return initialState
+        return house
       })
 
-      return state
+      return modState
 
-    case QUIT_LIKED_HOUSE:
-      initialState.map(house => {
+    case 'QUIT_LIKED_HOUSE':
+      modState = modState.map(house => {
         if (house.name === action.payload.name) {
           return {
             ...house,
             liked: false
           }
         }
-        return initialState
+        return house
       })
 
-      return state
+      return modState
 
     default:
-      return state
+      return { ...initialState }
   }
 }
-
-export default addLikeReducer

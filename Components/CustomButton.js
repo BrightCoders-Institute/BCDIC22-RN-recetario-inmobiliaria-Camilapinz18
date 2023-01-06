@@ -7,10 +7,10 @@ import {
   TouchableOpacity
 } from 'react-native'
 
-export default function CustomButton ({number}) {
+export default function CustomButton ({text}) {
   return (
     <TouchableOpacity style={styles.button}>
-      <Text style={styles.text}>{number}</Text>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   )
 }
@@ -18,15 +18,16 @@ export default function CustomButton ({number}) {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: '#00B074',
-    width: 40,
+    width: 100,
     height:40,
-    borderRadius:100,
+    borderRadius:10,
     display:'flex',
-    justifyContent:'center'
+    justifyContent:'center',
+    marginTop:5
   },
   text:{
     color:'white',
-    fontWeight:'bold',
+   
     textAlign:'center',
     fontSize:16
   }

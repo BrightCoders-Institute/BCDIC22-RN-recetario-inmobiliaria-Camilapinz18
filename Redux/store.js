@@ -1,4 +1,5 @@
-import {createStore} from 'redux'
-import addLikeReducer from './reducers'
+import { createStore } from 'redux'
+import {addLikeReducer} from './reducer'
 
-export const store=createStore(addLikeReducer)
+const store = createStore(addLikeReducer)
+export default store

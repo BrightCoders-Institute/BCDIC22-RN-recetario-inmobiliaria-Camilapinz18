@@ -9,6 +9,8 @@ import {
 } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { useSelector } from 'react-redux'
+import store from '../Redux/store'
 
 export default function HouseCard ({
   id,
@@ -19,19 +21,20 @@ export default function HouseCard ({
   size,
   cost,
   rating,
-  image,
-  houseObject,
-  houses,
-  setLikedHouse
+  image
 }) {
-  const isLiked = houseObject
-  console.log('isLiked', isLiked)
+  // console.log('isLiked', isLiked)
   //console.log('houseobjectyo', typeof houseObject)
+  const housesLiked = useSelector(state => state)
+  const values = Object.values(housesLiked)
+  //console.log('HOUSES LIKED:', housesLiked)
+  const isLiked = values.find(house => house.name === name)
+  //console.log('isLiked', isLiked)
   return (
     <View style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <View style={styles.ratingContainer}>
-          <Image style={styles.image} source={{uri:image}} />
+          <Image style={styles.image} source={{ uri: image }} />
           <View style={styles.rating}>
             <FontAwesome
               style={styles.icon}
@@ -81,12 +84,23 @@ export default function HouseCard ({
             <Text style={styles.costText}>{cost}</Text>
 
             <TouchableOpacity
-              onPress={() => setLikedHouse(name)}
               activeOpacity={0.5}
-                
-              //onPressOut={()=>isLiked(name)}
+              onPress={
+                isLiked.liked
+                  ? () =>
+                      store.dispatch({
+                        type: 'QUIT_LIKED_HOUSE',
+                        payload: { name }
+                      })
+                  : () =>
+                      store.dispatch({
+                        type: 'ADD_LIKED_HOUSE',
+                        payload: { name }
+                      })
+              }
+              //onPressOut={console.log('LIKED', isLiked.liked)}
             >
-              {isLiked ? (
+              {isLiked.liked ? (
                 <FontAwesome
                   style={{
                     backgroundColor: '#D32445',

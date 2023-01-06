@@ -3,5 +3,9 @@ import MainStack from './Navigation/MainStack'
 //import { store } from './Redux/store'
 
 export default function App () {
-  return <MainStack />
+  return (
+    
+      <MainStack />
+   
+  )
 }

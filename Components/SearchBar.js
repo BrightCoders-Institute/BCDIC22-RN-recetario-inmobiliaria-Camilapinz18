@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#CACACA',
     padding: 2,
-    borderRadius: 15
+    borderRadius: 15,
+    marginTop:5
   },
   iconSearchContainer: {
     flexGrow: 0.3,

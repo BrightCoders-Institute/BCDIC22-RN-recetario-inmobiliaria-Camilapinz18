@@ -68,7 +68,7 @@
   {
     "id": 7,
     "image": "https://valfer.mx/wp-content/uploads/2021/07/Casa.jpg",
-    "name": "The Willows",
+    "name": "cASA 7",
     "address": "3517 W. Gray St. Utica",
     "bedrooms": 3,
     "bathrooms": 2,
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "image": "https://valfer.mx/wp-content/uploads/2022/07/Casa-Venta-1536x1024.png",
-    "name": "Orchard House",
+    "name": "CASA 8",
     "address": "Evergreen Terrace 742",
     "bedrooms": 4,
     "bathrooms": 3,
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Casa_en_Estados_Unidos.jpg",
-    "name": "Corner House",
+    "name": "Casa9",
     "address": "Pwagmattasquarmsettport",
     "bedrooms": 2,
     "bathrooms": 1,
@@ -101,7 +101,7 @@
   {
     "id": 10,
     "image": "https://estavisa.cl/wp-content/uploads/2021/06/por-que-las-casas-son-de-madera-en-USA.jpg",
-    "name": "The Gilded Truffle",
+    "name": "Casa 10",
     "address": "The Gilded Truffle Av. 186",
     "bedrooms": 4,
     "bathrooms": 4,
@@ -112,7 +112,7 @@
   {
     "id": 11,
     "image": "https://static1.sosiva451.com/19528021/ff4f1c28-be98-484a-a046-0a61bd0731ef_u_large.jpg",
-    "name": "Monstromart",
+    "name": "Casa11",
     "address": "Boise Astoria W. 196 A",
     "bedrooms": 1,
     "bathrooms": 1,
@@ -123,7 +123,7 @@
   {
     "id": 12,
     "image": "https://static1.sosiva451.com/1519879/c5a9a42b-3341-4936-8ac8-456b2648354c_u_large.jpg",
-    "name": "Leftorium",
+    "name": "Leftorium12",
     "address": "A. 78 W. 21 Circuit Circus",
     "bedrooms": 2,
     "bathrooms": 1,
