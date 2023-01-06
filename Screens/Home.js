@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
 import { useState, useEffect } from 'react'
-
+import SearchBar from '../Components/SearchBar'
 import HouseCard from '../Components/HouseCard'
 
 const data = require('../data.json')
@@ -62,7 +62,11 @@ export default function App () {
 
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <ScrollView>
+      <View style={styles.searchContainer}>
+        <SearchBar />
+      </View>
+
+      <ScrollView style={styles.scrollView}>
         <View style={styles.container}>
           {data.map(info => {
             return (
@@ -92,12 +96,25 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
 
-    backgroundColor: '#E5E5E5'
+    backgroundColor: '#E5E5E5',
+    //backgroundColor: 'green'
   },
   container: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 20,
+    marginBottom:20
     // justifyContent: 'center'
+  },
+  searchContainer:{
+    display:'flex',
+   // backgroundColor:'red',
+    alignItems: 'center',
+    justifyContent:'center',
+    marginTop:20
+  },
+  scrollView:{
+    //backgroundColor:'yellow',
+    
   }
 })
