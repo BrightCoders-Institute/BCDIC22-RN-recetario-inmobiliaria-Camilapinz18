@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "data:image/jpg;base64,https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://valfer.mx/wp-content/uploads/2021/07/Casa.jpg",
     "name": "The Willows",
     "address": "3517 W. Gray St. Utica",
     "bedrooms": 3,
@@ -12,7 +12,7 @@
   },
   {
     "id": 2,
-    "image": "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://valfer.mx/wp-content/uploads/2022/07/Casa-Venta-1536x1024.png",
     "name": "Orchard House",
     "address": "Evergreen Terrace 742",
     "bedrooms": 4,
@@ -23,7 +23,7 @@
   },
   {
     "id": 3,
-    "image": "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Casa_en_Estados_Unidos.jpg",
     "name": "Corner House",
     "address": "Pwagmattasquarmsettport",
     "bedrooms": 2,
@@ -34,7 +34,7 @@
   },
   {
     "id": 4,
-    "image": "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://estavisa.cl/wp-content/uploads/2021/06/por-que-las-casas-son-de-madera-en-USA.jpg",
     "name": "The Gilded Truffle",
     "address": "The Gilded Truffle Av. 186",
     "bedrooms": 4,
@@ -45,7 +45,7 @@
   },
   {
     "id": 5,
-    "image": "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://static1.sosiva451.com/19528021/ff4f1c28-be98-484a-a046-0a61bd0731ef_u_large.jpg",
     "name": "Monstromart",
     "address": "Boise Astoria W. 196 A",
     "bedrooms": 1,
@@ -56,7 +56,7 @@
   },
   {
     "id": 6,
-    "image": "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
+    "image": "https://static1.sosiva451.com/1519879/c5a9a42b-3341-4936-8ac8-456b2648354c_u_large.jpg",
     "name": "Leftorium",
     "address": "A. 78 W. 21 Circuit Circus",
     "bedrooms": 2,

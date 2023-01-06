@@ -31,7 +31,7 @@ export default function HouseCard ({
     <View style={styles.cardContainer}>
       <View style={styles.imageContainer}>
         <View style={styles.ratingContainer}>
-          <Image style={styles.image} source={image} />
+          <Image style={styles.image} source={{uri:image}} />
           <View style={styles.rating}>
             <FontAwesome
               style={styles.icon}
