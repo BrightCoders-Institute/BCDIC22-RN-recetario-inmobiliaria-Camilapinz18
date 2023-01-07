@@ -25,10 +25,16 @@ export default function HouseCard ({
 }) {
   // console.log('isLiked', isLiked)
   //console.log('houseobjectyo', typeof houseObject)
-  const housesLiked = useSelector(state => state)
-  const values = Object.values(housesLiked)
-  //console.log('HOUSES LIKED:', housesLiked)
+  const data = useSelector(state => state)
+
+  const values = Object.values(data)
+  //console.log('DATAVALUES', values)
+  //console.log('HOUSES LIKED:', values)
   const isLiked = values.find(house => house.name === name)
+  //values.map(house => console.log(house.name))
+  //console.log("NAME,",address)
+  const imageThumbnail = image
+  //console.log('aIMGENtHUMBNAIÑ', imageThumbnail)
   //console.log('isLiked', isLiked)
   return (
     <View style={styles.cardContainer}>
@@ -78,10 +84,10 @@ export default function HouseCard ({
               size={20}
               color='#7C7D7D'
             />
-            <Text style={styles.spacesText}>{size}</Text>
+            <Text style={styles.spacesText}>{size} ft</Text>
           </View>
           <View style={styles.costContainer}>
-            <Text style={styles.costText}>{cost}</Text>
+            <Text style={styles.costText}>$ {cost}</Text>
 
             <TouchableOpacity
               activeOpacity={0.5}

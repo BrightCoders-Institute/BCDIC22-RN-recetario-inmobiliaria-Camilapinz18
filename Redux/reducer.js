@@ -1,4 +1,6 @@
-const data = require('../data.json')
+//import { resourceUsage } from 'process'
+
+const data = require('../dataParsed3.json')
 
 export const actionAddLike = {
   type: 'ADD_LIKED_HOUSE'
@@ -7,9 +9,27 @@ export const actionAddLike = {
 export const actionQuitLike = {
   type: 'QUIT_LIKED_HOUSE'
 }
+/******************************************** */
 
+
+//console.log("REQUIREDDATA",requiredData)
+/*************************************** */
 const initialState = []
-data.map(info => initialState.push({ name: info.name, liked: false }))
+data.map(info =>
+  initialState.push({
+    id: info.property_id,
+    name: info.property_id,
+    city: info.address.city,
+    address: info.address.line,
+    bedrooms: info.beds,
+    bathrooms: info.baths,
+    size: info.building_size?.size,
+    price: info.price,
+    image: info.image,
+    rating:4.5,
+    liked:false
+  })
+)
 console.log('INITIALSTATE___:', initialState)
 let modState = [...initialState]
 

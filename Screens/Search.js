@@ -4,20 +4,69 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  TextInput
+  TextInput,
+  Modal,
+  Pressable,
+  TouchableOpacity
 } from 'react-native'
+import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import CustomButton from '../Components/CustomButton'
 
 export default function Search () {
+  const [modalVisible, setModalVisible] = useState(false)
+  const data = useSelector(state => state)
+
+  const values = Object.values(data)
+  //console.log('values', values)
+
+  //Extaer solo ciudades:
+  const cities = []
+  values.map(value => cities.push(value.city))
+
+  console.log('CITIES', cities)
+
   return (
     <SafeAreaView>
       <View style={styles.mainContainer}>
-      <Text style={styles.titleText}>Location</Text>
+        <Text style={styles.titleText}>Location</Text>
+        <View style={styles.menuContainer}>
+          <Modal
+            animationType='slide'
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert('Modal has been closed.')
+              setModalVisible(!modalVisible)
+            }}
+          >
+            <View style={styles.modalContainer}>
+              <View style={styles.modalView}>
+                <ScrollView>
+                  {cities.map(city => (
+                    <Pressable
+                      style={[styles.button, styles.buttonClose]}
+                      onPress={() => setModalVisible(!modalVisible)}
+                    >
+                      <Text style={styles.textStyle}>{city}</Text>
+                    </Pressable>
+                  ))}
+                </ScrollView>
+              </View>
+            </View>
+          </Modal>
+          <TouchableOpacity
+            style={[styles.button, styles.buttonOpen]}
+            onPress={() => setModalVisible(true)}
+          >
+            <Text style={styles.selectLocation}>Select location</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.placeContainer}>
-          <TextInput
+          {/* <TextInput
             style={styles.input}
             placeholder='Where do you want your house?'
-          />
+          /> */}
         </View>
         <Text style={styles.titleText}>Price</Text>
         <View style={styles.areaContainer}>
@@ -41,7 +90,6 @@ export default function Search () {
             <TextInput placeholder='0' style={styles.textInput}></TextInput>
           </View>
         </View>
-
 
         <View style={styles.roomsContainer}>
           <View style={styles.bedroomsContainer}>
@@ -76,7 +124,7 @@ export default function Search () {
           </View>
         </View>
 
-        <CustomButton text='Search'/>
+        <CustomButton text='Search' />
       </View>
     </SafeAreaView>
   )
@@ -89,15 +137,49 @@ const styles = StyleSheet.create({
     //justifyContent:'space-evenly',
     alignItems: 'center'
   },
+  menuContainer: {
+    //backgroundColor: 'red',
+    display: 'flex',
+
+    borderRadius: 10,
+    marginTop: 10
+    //width: '87%',
+  },
+  selectLocation: {
+    // backgroundColor: 'blue',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#CACACA',
+    padding: 8
+  },
+  modalContainer: {
+    backgroundColor: 'white',
+    width: '70%',
+    alignSelf: 'center',
+    borderRadius: 10,
+    padding: 10,
+    display: 'flex',
+    borderWidth: 1,
+    borderColor: '#CACACA',
+    marginTop: 130
+  },
+  textStyle: {
+    color: 'black',
+    margin: 10
+  },
+  modalView: {
+    //backgroundColor: 'yellow',
+    padding: 5
+  },
   placeContainer: {
     display: 'flex',
     flexDirection: 'column',
     width: '90%',
     //height: 100,
     alignSelf: 'center',
-    alignItems: 'center'
-    , marginTop:10,
-    marginBottom:10
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 10
     //backgroundColor: 'red'
   },
   input: {
@@ -148,7 +230,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     //backgroundColor:'green',
-    
+
     padding: 5,
     width: 130,
     borderRadius: 10,
