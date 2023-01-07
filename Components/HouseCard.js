@@ -25,7 +25,7 @@ export default function HouseCard ({
 }) {
   // console.log('isLiked', isLiked)
   //console.log('houseobjectyo', typeof houseObject)
-  const data = useSelector(state => state)
+  const data = useSelector(state => state.data)
 
   const values = Object.values(data)
   //console.log('DATAVALUES', values)

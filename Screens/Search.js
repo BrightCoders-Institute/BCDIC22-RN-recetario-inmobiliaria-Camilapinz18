@@ -13,9 +13,14 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import CustomButton from '../Components/CustomButton'
 
+
 export default function Search () {
+  const [searchModalVisible, setsearchModalVisible] = useState(false)
   const [modalVisible, setModalVisible] = useState(false)
-  const data = useSelector(state => state)
+  const [counterRating, setCounterRating] = useState(0)
+  const [counterBedrooms, setCounterBedrooms] = useState(0)
+  const [counterBathrooms, setCounterBathrooms] = useState(0)
+  const data = useSelector(state => state.data)
 
   const values = Object.values(data)
   //console.log('values', values)
@@ -24,8 +29,22 @@ export default function Search () {
   const cities = []
   values.map(value => cities.push(value.city))
 
-  console.log('CITIES', cities)
+  //console.log('CITIES', cities)
 
+  const useCounterRating = () => {
+    setCounterRating(current => current + 1)
+    console.log('counter', counterRating)
+  }
+
+  const useCounterBedrooms = () => {
+    setCounterBedrooms(current => current + 1)
+    console.log('counter', counterBedrooms)
+  }
+
+  const useCounterBathrooms = () => {
+    setCounterBathrooms(current => current + 1)
+    console.log('counter', counterBathrooms)
+  }
   return (
     <SafeAreaView>
       <View style={styles.mainContainer}>
@@ -96,19 +115,30 @@ export default function Search () {
             <View>
               <Text>Bedrooms</Text>
             </View>
-
             <View style={styles.addButtons}>
-              <Text>-</Text>
-              <Text>0</Text>
-              <Text>+</Text>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text style={styles.addButtonsControls}>-</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text>0</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text style={styles.addButtonsControls}>+</Text>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.bedroomsContainer}>
             <Text>Bathrooms</Text>
             <View style={styles.addButtons}>
-              <Text>-</Text>
-              <Text>0</Text>
-              <Text>+</Text>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text style={styles.addButtonsControls}>-</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text>0</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text style={styles.addButtonsControls}>+</Text>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={styles.bedroomsContainer}>
@@ -117,9 +147,18 @@ export default function Search () {
             </View>
 
             <View style={styles.addButtons}>
-              <Text>-</Text>
-              <Text>0</Text>
-              <Text>+</Text>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text style={styles.addButtonsControls}>-</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.addButtonsPress}>
+                <Text>{counterRating}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.addButtonsPress}
+                onPress={useCounterRating}
+              >
+                <Text style={styles.addButtonsControls}>+</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -142,7 +181,8 @@ const styles = StyleSheet.create({
     display: 'flex',
 
     borderRadius: 10,
-    marginTop: 10
+    marginTop: 10,
+    width: '80%'
     //width: '87%',
   },
   selectLocation: {
@@ -271,8 +311,20 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#CACACA',
     borderRadius: 5,
-    width: 75,
+    width: 110,
     justifyContent: 'space-around',
-    padding: 2
+    padding: 0
+  },
+  addButtonsPress: {
+    //backgroundColor: 'green',
+    //flexGrow:1,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: 30,
+    width: 30
+    //
+  },
+  addButtonsControls: {
+    fontWeight: 'bold'
   }
 })

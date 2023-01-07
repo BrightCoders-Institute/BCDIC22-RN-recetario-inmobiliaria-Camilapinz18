@@ -1,5 +1,10 @@
-import { createStore } from 'redux'
-import {addLikeReducer} from './reducer'
+import { createStore, combineReducers } from 'redux'
+import { addLikeReducer } from './reducer'
+import { determineLocationReducer } from './reducer'
 
-const store = createStore(addLikeReducer)
+const rootReducer = combineReducers({
+  data: addLikeReducer,
+  location: determineLocationReducer
+})
+const store = createStore(rootReducer)
 export default store

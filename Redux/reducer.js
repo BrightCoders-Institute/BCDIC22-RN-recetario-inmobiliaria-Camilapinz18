@@ -9,28 +9,32 @@ export const actionAddLike = {
 export const actionQuitLike = {
   type: 'QUIT_LIKED_HOUSE'
 }
+
+export const actionDetermineLocation = {
+  type: 'DETERMINE_LOCATION'
+}
 /******************************************** */
 
+/****** */
 
-//console.log("REQUIREDDATA",requiredData)
 /*************************************** */
 const initialState = []
 data.map(info =>
   initialState.push({
     id: info.property_id,
-    name: info.property_id,
+    name: info.address.line,
     city: info.address.city,
-    address: info.address.line,
+    address: info.address.city,
     bedrooms: info.beds,
     bathrooms: info.baths,
     size: info.building_size?.size,
     price: info.price,
     image: info.image,
-    rating:4.5,
-    liked:false
+    rating: 4.5,
+    liked: false
   })
 )
-console.log('INITIALSTATE___:', initialState)
+//console.log('INITIALSTATE___:', initialState)
 let modState = [...initialState]
 
 export const addLikeReducer = (state = modState, action) => {
@@ -65,5 +69,26 @@ export const addLikeReducer = (state = modState, action) => {
 
     default:
       return { ...initialState }
+  }
+}
+
+/********************************** */
+let randCity = ''
+const cities = []
+initialState.map(value => cities.push(value.city))
+console.log('CITIES', cities)
+
+randCity = cities[Math.round(Math.random() * cities.length)]
+console.log('RANDCITY', randCity)
+export const determineLocationReducer = (state = randCity, action) => {
+  switch (action.type) {
+    case 'DETERMINE_LOCATION':
+      console.log('ESTOY EN DETERMINE LOCATION')
+      const newRandCity = cities[Math.round(Math.random() * cities.length)]
+      console.log('RANDCITY', randCity)
+      return newRandCity
+
+    default:
+      return randCity
   }
 }

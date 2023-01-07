@@ -4,18 +4,20 @@ import HouseCard from '../Components/HouseCard'
 import SearchBar from '../Components/SearchBar'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 //const data = require('../data.json')
-const data = require('../dataParsed3.json')
+//const data = require('../dataParsed3.json')
 
 export default function LikedHouses () {
-  const housesLiked = useSelector(state => state)
-  const values = Object.values(housesLiked)
+  const data = useSelector(state => state.data)
+  const values = Object.values(data)
+  //const housesLiked = useSelector(state => state)
+  //const values = Object.values(housesLiked)
   const houseRender = []
   //console.log('values', values)
   //console.log('data', data)
   
   values.map(value =>
     value.liked
-      ? houseRender.push(data.find(house => house.property_id === value.name))
+      ? houseRender.push(data.find(house => house.name === value.name))
       : ''
   )
   const isAny = houseRender.length
@@ -47,15 +49,15 @@ export default function LikedHouses () {
           {houseRender.map(info => {
             return (
               <HouseCard
-                key={info.property_id}
+                key={info.name}
                   image={info.image}
-                  name={info.property_id}
-                  address={info.address.city}
-                  bedrooms={info.beds}
-                  bathrooms={info.baths}
-                  size={info.building_size?.size}
+                  name={info.name}
+                  address={info.address}
+                  bedrooms={info.bedrooms}
+                  bathrooms={info.bathrooms}
+                  size={info.size}
                   cost={info.price}
-                  rating={4.5}
+                  rating={4.6}
                   
               />
               
