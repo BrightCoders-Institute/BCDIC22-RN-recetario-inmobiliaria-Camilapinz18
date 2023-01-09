@@ -13,6 +13,10 @@ export const actionQuitLike = {
 export const actionDetermineLocation = {
   type: 'DETERMINE_LOCATION'
 }
+
+export const actionSearchHouse = {
+  type: 'SEARCH_HOUSE'
+}
 /******************************************** */
 
 /****** */
@@ -76,19 +80,54 @@ export const addLikeReducer = (state = modState, action) => {
 let randCity = ''
 const cities = []
 initialState.map(value => cities.push(value.city))
-console.log('CITIES', cities)
+//console.log('CITIES', cities)
 
-randCity = cities[Math.round(Math.random() * cities.length)]
-console.log('RANDCITY', randCity)
+let citiesToShow=[...new Set(cities)]
+citiesToShow.sort()
+//console.log("YYY",citiesToShow)
+
+randCity = citiesToShow[Math.round(Math.random() * citiesToShow.length)]
+//console.log('RANDCITY', randCity)
+
 export const determineLocationReducer = (state = randCity, action) => {
   switch (action.type) {
     case 'DETERMINE_LOCATION':
       console.log('ESTOY EN DETERMINE LOCATION')
       const newRandCity = cities[Math.round(Math.random() * cities.length)]
       console.log('RANDCITY', randCity)
+      randCity = newRandCity
       return newRandCity
 
     default:
       return randCity
+  }
+}
+
+/*************************************** */
+
+export const searchHouse = (state = initialState, action) => {
+  const searchedHouses = []
+  switch (action.type) {
+    case 'SEARCH_HOUSE':
+      console.log('ESTOY EN SEARCH_HOUSE')
+
+      initialState.map(house =>
+        house.address === action.payload.address &&
+        house.price > action.payload.priceMin &&
+        house.price < action.payload.priceMax &&
+        house.size > action.payload.sizeMin &&
+        house.size < action.payload.sizeMax &&
+        house.bedrooms >= action.payload.bedrooms &&
+        house.bathrooms >= action.payload.bathrooms &&
+        house.rating >= action.payload.rating
+          ? searchedHouses.push(house)
+          : ''
+      )
+
+      // console.log('SEARCHED:HOUSES', searchedHouses)
+      return searchedHouses
+
+    default:
+      return searchedHouses
   }
 }

@@ -12,7 +12,8 @@ import {
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import CustomButton from '../Components/CustomButton'
-
+import store from '../Redux/store'
+import HouseCard from '../Components/HouseCard'
 
 export default function Search () {
   const [searchModalVisible, setsearchModalVisible] = useState(false)
@@ -20,168 +21,347 @@ export default function Search () {
   const [counterRating, setCounterRating] = useState(0)
   const [counterBedrooms, setCounterBedrooms] = useState(0)
   const [counterBathrooms, setCounterBathrooms] = useState(0)
-  const data = useSelector(state => state.data)
+  const [priceMin, setPriceMin] = useState(0)
+  const [priceMax, setPriceMax] = useState(0)
+  const [sizeMin, setSizeMin] = useState(0)
+  const [sizeMax, setSizeMax] = useState(0)
+  const [selectedCity, setSelectedCity] = useState('')
 
+  const data = useSelector(state => state.data)
+  const results = useSelector(state => state.search)
+  console.log('RESULTSA', results)
   const values = Object.values(data)
   //console.log('values', values)
-
+  console.log(priceMin, priceMax)
   //Extaer solo ciudades:
   const cities = []
+
   values.map(value => cities.push(value.city))
+  let citiesToShow = [...new Set(cities)]
 
+  citiesToShow.sort()
+  console.log('YYY', citiesToShow)
+
+  console.log('cities', cities)
+
+  function sendValues () {
+    console.log('pricemaxout', priceMax)
+    if (selectedCity === '') {
+      alert('You must select a location')
+    } else {
+      if (priceMax === 0) {
+        setPriceMax(current => 50000000)
+        console.log('pricemax', priceMax)
+      }
+      if (sizeMax < 1) {
+        setSizeMax(current => 50000)
+        console.log('sizemax', sizeMax)
+      }
+
+      setsearchModalVisible(true)
+      store.dispatch({
+        type: 'SEARCH_HOUSE',
+        payload: {
+          address: selectedCity,
+          priceMin: priceMin,
+          priceMax: priceMax,
+          sizeMin: sizeMin,
+          sizeMax: sizeMax,
+          bedrooms: counterBedrooms,
+          bathrooms: counterBathrooms,
+          rating: counterRating
+        }
+      })
+
+      //console.log('SEARCHOBJECT', searchObject)
+    }
+  }
+
+  const searchData = () => {
+    // data.filter()
+    searchModalVisible(true)
+  }
   //console.log('CITIES', cities)
+  //setModalVisible(true)
 
-  const useCounterRating = () => {
-    setCounterRating(current => current + 1)
-    console.log('counter', counterRating)
+  const useCounterRating = bools => {
+    if (bools === true) {
+      counterRating === 5
+        ? setCounterRating(5)
+        : setCounterRating(current => current + 1)
+      console.log('counter', counterRating)
+    } else if (bools === false) {
+      counterRating === 0
+        ? setCounterRating(0)
+        : setCounterRating(current => current - 1)
+      console.log('counter', counterRating)
+    }
   }
 
-  const useCounterBedrooms = () => {
-    setCounterBedrooms(current => current + 1)
-    console.log('counter', counterBedrooms)
+  const useCounterBedrooms = bools => {
+    if (bools === true) {
+      counterBedrooms === 10
+        ? setCounterBedrooms(10)
+        : setCounterBedrooms(current => current + 1)
+      console.log('counter', counterBedrooms)
+    } else if (bools === false) {
+      counterBedrooms === 0
+        ? setCounterBedrooms(0)
+        : setCounterBedrooms(current => current - 1)
+      console.log('counter', counterBedrooms)
+    }
   }
 
-  const useCounterBathrooms = () => {
-    setCounterBathrooms(current => current + 1)
-    console.log('counter', counterBathrooms)
+  const useCounterBathrooms = bools => {
+    if (bools === true) {
+      counterBathrooms === 10
+        ? setCounterBathrooms(10)
+        : setCounterBathrooms(current => current + 1)
+      console.log('counter', counterBathrooms)
+    } else if (bools === false) {
+      counterBathrooms === 0
+        ? setCounterBathrooms(0)
+        : setCounterBathrooms(current => current - 1)
+      console.log('counter', counterBathrooms)
+    }
   }
+
   return (
     <SafeAreaView>
-      <View style={styles.mainContainer}>
-        <Text style={styles.titleText}>Location</Text>
-        <View style={styles.menuContainer}>
-          <Modal
-            animationType='slide'
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert('Modal has been closed.')
-              setModalVisible(!modalVisible)
-            }}
-          >
-            <View style={styles.modalContainer}>
-              <View style={styles.modalView}>
-                <ScrollView>
-                  {cities.map(city => (
-                    <Pressable
-                      style={[styles.button, styles.buttonClose]}
-                      onPress={() => setModalVisible(!modalVisible)}
-                    >
-                      <Text style={styles.textStyle}>{city}</Text>
-                    </Pressable>
-                  ))}
-                </ScrollView>
-              </View>
-            </View>
-          </Modal>
-          <TouchableOpacity
-            style={[styles.button, styles.buttonOpen]}
-            onPress={() => setModalVisible(true)}
-          >
-            <Text style={styles.selectLocation}>Select location</Text>
-          </TouchableOpacity>
+      <Modal
+        animationType='slide'
+        transparent={false}
+        visible={searchModalVisible}
+        onRequestClose={() => {
+          setsearchModalVisible(!searchModalVisible)
+        }}
+      >
+        <View style={styles.resultsContainer}>
+          <ScrollView>
+            {results.map(result => {
+              return (
+                <HouseCard
+                  key={result.name}
+                  image={result.image}
+                  name={result.name}
+                  address={result.address}
+                  bedrooms={result.bedrooms}
+                  bathrooms={result.bathrooms}
+                  size={result.size}
+                  cost={result.price}
+                  rating={result.rating}
+                />
+              )
+            })}
+          </ScrollView>
         </View>
-        <View style={styles.placeContainer}>
-          {/* <TextInput
+        <Text>MODALL</Text>
+      </Modal>
+      <ScrollView>
+        <View style={styles.mainContainer}>
+          <View style={styles.menuContainer}>
+            <Text style={styles.titleText}>Location</Text>
+            <Modal
+              animationType='slide'
+              transparent={true}
+              visible={modalVisible}
+              onRequestClose={() => {
+                alert('Modal cities.')
+                setModalVisible(!modalVisible)
+              }}
+            >
+              <View style={styles.modalContainer}>
+                <View style={styles.modalView}>
+                  <ScrollView>
+                    {citiesToShow.map(city => (
+                      <Pressable
+                        style={[styles.button, styles.buttonClose]}
+                        onPressIn={() => setSelectedCity(city)}
+                        onPress={() => setModalVisible(!modalVisible)}
+                      >
+                        <Text style={styles.textStyle}>{city}</Text>
+                      </Pressable>
+                    ))}
+                  </ScrollView>
+                </View>
+              </View>
+            </Modal>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonOpen]}
+              onPress={() => setModalVisible(true)}
+            >
+              {selectedCity === '' ? (
+                <Text style={styles.selectLocation}>Select location</Text>
+              ) : (
+                <Text style={styles.selectLocation}>{selectedCity}</Text>
+              )}
+            </TouchableOpacity>
+          </View>
+          <View style={styles.placeContainer}>
+            {/* <TextInput
             style={styles.input}
             placeholder='Where do you want your house?'
           /> */}
-        </View>
-        <Text style={styles.titleText}>Price</Text>
-        <View style={styles.areaContainer}>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>From</Text>
-            <TextInput style={styles.textInput} placeholder='$ 0'></TextInput>
           </View>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>To</Text>
-            <TextInput placeholder='$ 0' style={styles.textInput}></TextInput>
+          <Text style={styles.titleText}>Price</Text>
+          <View style={styles.areaContainer}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>From</Text>
+              <TextInput
+                style={styles.textInput}
+                placeholder='$ 0'
+                keyboardType='number-pad'
+                onChangeText={value => setPriceMin(value)}
+              ></TextInput>
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>To</Text>
+              <TextInput
+                placeholder='$ 0'
+                style={styles.textInput}
+                keyboardType='number-pad'
+                onChangeText={value => setPriceMax(value)}
+              ></TextInput>
+              <Text>
+                {priceMax}
+                {priceMin}
+              </Text>
+            </View>
           </View>
-        </View>
-        <Text style={styles.titleText}>Area</Text>
-        <View style={styles.areaContainer}>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>From</Text>
-            <TextInput style={styles.textInput} placeholder='0'></TextInput>
+          <Text style={styles.titleText}>Area</Text>
+          <View style={styles.areaContainer}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>From</Text>
+              <TextInput
+                style={styles.textInput}
+                placeholder='0'
+                keyboardType='number-pad'
+                onChangeText={value => setSizeMin(value)}
+              ></TextInput>
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>To</Text>
+              <TextInput
+                placeholder='0'
+                keyboardType='number-pad'
+                style={styles.textInput}
+                onChangeText={value => setSizeMax(value)}
+              ></TextInput>
+              <Text>
+                {sizeMax}
+                {sizeMin}
+              </Text>
+            </View>
           </View>
-          <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>To</Text>
-            <TextInput placeholder='0' style={styles.textInput}></TextInput>
-          </View>
-        </View>
 
-        <View style={styles.roomsContainer}>
-          <View style={styles.bedroomsContainer}>
-            <View>
-              <Text>Bedrooms</Text>
+          <View style={styles.roomsContainer}>
+            <View style={styles.bedroomsContainer}>
+              <View>
+                <Text>Bedrooms</Text>
+              </View>
+              <View style={styles.addButtons}>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterBedrooms(false)}
+                >
+                  <Text style={styles.addButtonsControls}>-</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.addButtonsPress}>
+                  <Text>{counterBedrooms}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterBedrooms(true)}
+                >
+                  <Text style={styles.addButtonsControls}>+</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-            <View style={styles.addButtons}>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text style={styles.addButtonsControls}>-</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text style={styles.addButtonsControls}>+</Text>
-              </TouchableOpacity>
+            <View style={styles.bedroomsContainer}>
+              <Text>Bathrooms</Text>
+              <View style={styles.addButtons}>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterBathrooms(false)}
+                >
+                  <Text style={styles.addButtonsControls}>-</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.addButtonsPress}>
+                  <Text>{counterBathrooms}</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterBathrooms(true)}
+                >
+                  <Text style={styles.addButtonsControls}>+</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
-          <View style={styles.bedroomsContainer}>
-            <Text>Bathrooms</Text>
-            <View style={styles.addButtons}>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text style={styles.addButtonsControls}>-</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text>0</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text style={styles.addButtonsControls}>+</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
-          <View style={styles.bedroomsContainer}>
-            <View>
-              <Text>Rating</Text>
-            </View>
+            <View style={styles.bedroomsContainer}>
+              <View>
+                <Text>Rating</Text>
+              </View>
 
-            <View style={styles.addButtons}>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text style={styles.addButtonsControls}>-</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.addButtonsPress}>
-                <Text>{counterRating}</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.addButtonsPress}
-                onPress={useCounterRating}
-              >
-                <Text style={styles.addButtonsControls}>+</Text>
-              </TouchableOpacity>
+              <View style={styles.addButtons}>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterRating(false)}
+                >
+                  <Text style={styles.addButtonsControls}>-</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.addButtonsPress}>
+                  <Text>{counterRating}+</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.addButtonsPress}
+                  onPress={() => useCounterRating(true)}
+                >
+                  <Text style={styles.addButtonsControls}>+</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
+          <Pressable
+            // style={[styles.button, styles.buttonClose]}
+            // onPress={() => setsearchModalVisible(!searchModalVisible)}
+            onPress={() => sendValues()}
+          >
+            <Text>Search</Text>
+          </Pressable>
         </View>
-
-        <CustomButton text='Search' />
-      </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
+  searchResultsContainer: {
+    backgroundColor: 'red',
+    flex: 1
+  },
+  resultsContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    flex: 1
+  },
   mainContainer: {
     display: 'flex',
-    //backgroundColor:'green',
+    backgroundColor: 'white',
     //justifyContent:'space-evenly',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderRadius: 10,
+    width: '95%',
+    alignSelf: 'center',
+    marginTop: 0,
+    borderWidth: 1,
+    borderColor: '#CACACA'
   },
   menuContainer: {
     //backgroundColor: 'red',
     display: 'flex',
 
     borderRadius: 10,
-    marginTop: 10,
+    marginTop: 50,
     width: '80%'
     //width: '87%',
   },
@@ -229,6 +409,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#CACACA',
     padding: 8
+  },
+  buttonOpen: {
+    marginTop: 20
   },
   priceContainer: {
     display: 'flex',
@@ -287,6 +470,7 @@ const styles = StyleSheet.create({
     width: '78%',
     fontWeight: 'bold',
     fontSize: 16
+    //marginBottom:10
   },
   roomsContainer: {
     display: 'flex',

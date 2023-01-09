@@ -248,6 +248,10 @@
       "size": 1664,
       "units": "sqft"
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "mls": {
       "name": "OneKeyMLS",
       "id": "3451204",
@@ -433,7 +437,7 @@
     "baths_half": 1,
     "baths_full": 4,
     "baths": 5,
-    "beds": null,
+    "beds": 5,
     "building_size": {
       "size": 5275,
       "units": "sqft"
@@ -1687,6 +1691,10 @@
       "lon": -73.962847,
       "neighborhood_name": "Upper East Side"
     },
+    "building_size": {
+      "size": 872,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -1704,7 +1712,7 @@
     "price": 649500,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -2422,7 +2430,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/59a61e255b98fb0ebe031c89fea28903l-m742085793x.jpg",
     "page_no": 1,
     "rank": 19,
     "list_tracking": "type|property|data|prop_id|4741790592|list_id|2951211044|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^1|J|0|1|21DYO|2PI0N|2PL5C|35T|G|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -2470,6 +2478,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 950000,
@@ -3260,6 +3272,11 @@
         }
       }
     },
+    "building_size": {
+      "size": 1234,
+      "units": "sqft"
+    },
+
     "prop_status": "for_sale",
     "price": 259000,
     "baths_full": 1,
@@ -4118,7 +4135,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 1,
     "rank": 32,
     "list_tracking": "type|property|data|prop_id|4492667703|list_id|2951207748|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|broker|property_status|product_code|advantage_code^1|W|0|1|W86A|2NJMW|35T|G|1^^$0|1|2|$3|4|5|6|7|I|8|J|9|$A|K|B|L]|C|$D|M|E|N]|F|O|G|P|H|Q]]",
@@ -4151,6 +4168,10 @@
       "lat": 40.695253,
       "lon": -73.7475,
       "neighborhood_name": "Southeastern Queens"
+    },
+    "building_size": {
+      "size": 1950,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -4415,6 +4436,10 @@
       "lat": 40.716697,
       "lon": -73.937526,
       "neighborhood_name": "Northern Brooklyn"
+    },
+    "building_size": {
+      "size": 1072,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -4938,6 +4963,10 @@
       "lon": -73.966793,
       "neighborhood_name": "Midtown East"
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -5332,8 +5361,8 @@
     },
     "prop_status": "for_sale",
     "price": 3500000,
-    "baths": 0,
-    "beds": null,
+    "baths": 3,
+    "beds": 4,
     "agents": [
       {
         "primary": true,
@@ -5407,12 +5436,16 @@
       "smarthome_enabled": false
     },
     "photo_count": 3,
-    "image": "https://ap.rdcpix.com/8242549ee5ebac80165d1309d780f85dl-m2881195672x.jpg",
+    "image": "https://ap.rdcpix.com/c4f95e329d2be714eedf2dfcff8bb611l-m563038171x.jpg",
     "page_no": 1,
     "rank": 42,
     "list_tracking": "type|property|data|prop_id|9761738562|list_id|2951204526|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^1|16|0|1|2CAVF|1CTL4|1CTLE|35T|0|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
     "lot_size": {
       "size": 6470,
+      "units": "sqft"
+    },
+    "building_size": {
+      "size": 3245,
       "units": "sqft"
     },
     "mls": {
@@ -5496,6 +5529,9 @@
       "show_veterans_united_in_lead_form": false,
       "flip_the_market_enabled": true,
       "is_showcase_choice_enabled": false
+    },"building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "lead_forms": {
       "form": {
@@ -5846,7 +5882,7 @@
     "price": 1150000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 588,
       "units": "sqft"
@@ -5980,6 +6016,10 @@
         "name": "Margaret Klusek"
       }
     ],
+    "building_size": {
+      "size": 3102,
+      "units": "sqft"
+    },
     "office": {
       "id": "7071a0f805a86b3008084642167bbe60",
       "name": "Winzone Realty Inc"
@@ -6079,6 +6119,10 @@
       "lat": 40.690924,
       "lon": -73.940244,
       "neighborhood_name": "Northern Brooklyn"
+    },
+    "building_size": {
+      "size": 6781,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -6339,6 +6383,10 @@
       "lat": 40.798854,
       "lon": -73.972432,
       "neighborhood_name": "Upper West Side"
+    },
+    "building_size": {
+      "size": 2965,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -6603,10 +6651,14 @@
         }
       }
     },
+    "building_size": {
+      "size": 510,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 850000,
-    "baths": 0,
-    "beds": null,
+    "baths": 1,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -6677,6 +6729,7 @@
     },
     "photo_count": 0,
     "page_no": 2,
+    "image": "https://ap.rdcpix.com/6bf5a547cd22df864ba6ddfacdf65323l-m1867617889x.jpg",
     "rank": 9,
     "list_tracking": "type|property|data|prop_id|4735497081|list_id|2951200300|page|rank|list_branding|listing_agent|listing_office|property_status|product_code|advantage_code^2|9|0|1|35T|G|0^^$0|1|2|$3|4|5|6|7|F|8|G|9|$A|H|B|I]|C|J|D|K|E|L]]",
     "mls": {
@@ -7124,6 +7177,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 1542,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 255000,
     "baths_full": 1,
@@ -7202,7 +7259,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 9,
-    "image": "https://ap.rdcpix.com/3fae4d85f3f7e4b5e0ec2321e95a38f8l-m632820943x.jpg",
+    "image": "https://ap.rdcpix.com/1b690076872b02188ac73fd64b77ee88l-m190277190x.jpg",
     "page_no": 2,
     "rank": 13,
     "list_tracking": "type|property|data|prop_id|9894283079|list_id|2951199540|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|property_status|product_code|advantage_code^2|D|0|1|C89Y|2ANTX|35T|G|5^^$0|1|2|$3|4|5|6|7|I|8|J|9|$A|K|B|L]|C|$D|M|E|N]|F|O|G|P|H|Q]]",
@@ -7239,6 +7296,10 @@
       "lat": 40.728688,
       "lon": -73.849768,
       "neighborhood_name": "Rego Park"
+    },
+    "building_size": {
+      "size": 970,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -7399,7 +7460,7 @@
     "price": 469000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 400,
       "units": "sqft"
@@ -7660,7 +7721,12 @@
     "price": null,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
+    "price": 864200,
     "agents": [
       {
         "primary": true,
@@ -8996,6 +9062,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 1987,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 338000,
     "baths_full": 1,
@@ -9110,6 +9180,10 @@
       "lon": -73.832899,
       "neighborhood_name": "Northeastern Queens"
     },
+    "building_size": {
+      "size": 1365,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -9127,7 +9201,7 @@
     "price": 448000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -9521,11 +9595,15 @@
         }
       }
     },
+    "building_size": {
+      "size": 1520,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 2800000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -9894,6 +9972,10 @@
       "lon": -73.983464,
       "neighborhood_name": "South Brooklyn"
     },
+    "building_size": {
+      "size": 4510,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -10021,6 +10103,10 @@
       "lat": 40.773656,
       "lon": -73.947188,
       "neighborhood_name": "Upper East Side"
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -10238,7 +10324,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 2,
     "rank": 36,
     "list_tracking": "type|property|data|prop_id|3733304211|list_id|2951196730|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^2|10|0|1|2WCNL|2WCND|1CTN1|35T|G|1^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -10274,6 +10360,10 @@
       "lat": 40.779617,
       "lon": -73.960933,
       "neighborhood_name": "Upper East Side"
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -10525,6 +10615,10 @@
       "lon": -73.975481,
       "neighborhood_name": "Upper West Side"
     },
+    "building_size": {
+      "size": 1240,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -10646,6 +10740,10 @@
       "lat": 40.674492,
       "lon": -73.964049,
       "neighborhood_name": "Prospect Heights"
+    },
+    "building_size": {
+      "size": 2145,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -10920,7 +11018,7 @@
     "price": 295000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 360,
       "units": "sqft"
@@ -11029,6 +11127,10 @@
       "lat": 40.75205,
       "lon": -73.968985,
       "neighborhood_name": "Turtle Bay"
+    },
+    "building_size": {
+      "size": 678,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -11153,6 +11255,10 @@
       "lon": -73.968985,
       "neighborhood_name": "Turtle Bay"
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -11170,7 +11276,7 @@
     "price": 475000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -11554,6 +11660,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 3654,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 899000,
@@ -11940,6 +12050,10 @@
       "lon": -73.855193,
       "neighborhood_name": "South Corona"
     },
+    "building_size": {
+      "size": 2146,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -12085,6 +12199,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 1983,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 739999,
     "baths_half": 1,
@@ -12214,6 +12332,10 @@
       "lat": 40.7588,
       "lon": -73.818504,
       "neighborhood_name": "Northeastern Queens"
+    },
+    "building_size": {
+      "size": 1365,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -12868,6 +12990,10 @@
       "lon": -73.913356,
       "neighborhood_name": "Northern Brooklyn"
     },
+    "building_size": {
+      "size": 4012,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -12958,7 +13084,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 3,
     "rank": 14,
     "list_tracking": "type|property|data|prop_id|4179567940|list_id|2951195310|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^3|E|0|1|16N7D|134O2|134NM|6BL|G|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -13794,6 +13920,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 2450,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 729000,
     "baths_full": 2,
@@ -13923,6 +14053,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 432,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 275000,
@@ -14388,7 +14522,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 5,
-    "image": "https://ap.rdcpix.com/f31d94dab35bf0c9d00668a7a0f92456l-m551799081x.jpg",
+    "image": "https://ap.rdcpix.com/6bf5a547cd22df864ba6ddfacdf65323l-m1867617889x.jpg",
     "page_no": 3,
     "rank": 25,
     "list_tracking": "type|property|data|prop_id|9706163694|list_id|2951193382|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^3|P|0|1|1NJFJ2|2K3Q7|2K5A8|35T|G|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -14559,6 +14693,10 @@
       "lon": -73.887981,
       "neighborhood_name": "East New York"
     },
+    "building_size": {
+      "size": 5781,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -14576,7 +14714,7 @@
     "price": 1300000,
     "baths_full": 6,
     "baths": 6,
-    "beds": 14,
+    "beds": 6,
     "agents": [
       {
         "primary": true,
@@ -14650,7 +14788,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 3,
     "rank": 27,
     "list_tracking": "type|property|data|prop_id|9220523544|list_id|2951193024|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|broker|property_status|product_code|advantage_code^3|R|0|1|20557|1V4XS|35T|G|1^^$0|1|2|$3|4|5|6|7|I|8|J|9|$A|K|B|L]|C|$D|M|E|N]|F|O|G|P|H|Q]]",
@@ -14948,6 +15086,10 @@
       "lat": 40.773027,
       "lon": -73.957818,
       "neighborhood_name": "Upper East Side"
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -15366,7 +15508,7 @@
     "price": 225000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 550,
       "units": "sqft"
@@ -15477,6 +15619,10 @@
       "lat": 40.583332,
       "lon": -73.962717,
       "neighborhood_name": "Brighton Beach"
+    },
+    "building_size": {
+      "size": 1072,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -15883,6 +16029,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 3012,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 345000,
@@ -16653,6 +16803,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 3610,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 1150000,
     "baths_full": 3,
@@ -16943,6 +17097,11 @@
         "name": "Shelley Reilly"
       }
     ],
+    "building_size": {
+      "size": 3541,
+      "units": "sqft"
+    },
+
     "office": {
       "id": "96f979740fd101fdb7649d5611d1829b",
       "name": "Cordial Realty Group Inc"
@@ -17046,6 +17205,10 @@
       "time_zone": "America/New_York",
       "lat": 40.746345,
       "lon": -73.75674
+    },
+    "building_size": {
+      "size": 1123,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -17183,6 +17346,10 @@
       "lat": 40.772545,
       "lon": -73.946061,
       "neighborhood_name": "Yorkville"
+    },
+    "building_size": {
+      "size": 1420,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -17326,10 +17493,14 @@
         }
       }
     },
+    "building_size": {
+      "size": 721,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 299000,
-    "baths": 0,
-    "beds": null,
+    "baths": 1,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -17817,6 +17988,10 @@
       "lon": -73.802713,
       "neighborhood_name": "Murray Hill"
     },
+    "building_size": {
+      "size": 3140,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -17908,7 +18083,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 4,
     "rank": 9,
     "list_tracking": "type|property|data|prop_id|4420877665|list_id|2951190526|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^4|9|0|1|PJTY|1R65B|2NMZW|35T|G|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -17960,6 +18135,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 6321,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 520000,
@@ -18305,7 +18484,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 4,
     "rank": 12,
     "list_tracking": "type|property|data|prop_id|3264619837|list_id|2951189517|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|broker|property_status|product_code|advantage_code^4|C|0|1|1ZEX9|2B8WE|35T|G|1^^$0|1|2|$3|4|5|6|7|I|8|J|9|$A|K|B|L]|C|$D|M|E|N]|F|O|G|P|H|Q]]",
@@ -19001,6 +19180,10 @@
       "lon": -73.978376,
       "neighborhood_name": "Midtown Manhattan"
     },
+    "building_size": {
+      "size": 671,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -19124,6 +19307,10 @@
       "lon": -73.96016,
       "neighborhood_name": "Upper West Side"
     },
+    "building_size": {
+      "size": 864,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -19210,7 +19397,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 0,
-    "image": "",
+    "image": "https://ap.rdcpix.com/7005d94e87ba9e8740857ed821e9fc04l-m709688442x.jpg",
     "page_no": 4,
     "rank": 19,
     "list_tracking": "type|property|data|prop_id|3725757138|list_id|2951188847|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^4|J|0|1|XXES|1C7YI|17KOB|35T|G|5^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -19245,6 +19432,10 @@
       "lat": 40.621592,
       "lon": -74.133406,
       "neighborhood_name": "Westerleigh"
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -19386,6 +19577,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 1302,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 288000,
     "baths_full": 1,
@@ -19518,7 +19713,7 @@
     "price": 180000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 720,
       "units": "sqft"
@@ -19902,6 +20097,10 @@
       "lat": 40.713339,
       "lon": -73.856986,
       "neighborhood_name": "Forest Hills"
+    },
+    "building_size": {
+      "size": 2671,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -20298,6 +20497,10 @@
       "lon": -73.936358,
       "neighborhood_name": "Hudson Heights"
     },
+    "building_size": {
+      "size": 574,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -20315,7 +20518,7 @@
     "price": 315000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -20418,6 +20621,10 @@
       "lat": 40.787874,
       "lon": -73.968112,
       "neighborhood_name": "Upper West Side"
+    },
+    "building_size": {
+      "size": 578,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -20682,10 +20889,14 @@
         }
       }
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 549000,
-    "baths": 0,
-    "beds": null,
+    "baths": 2,
+    "beds": 2,
     "agents": [
       {
         "primary": true,
@@ -20939,6 +21150,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 485000,
@@ -21337,6 +21552,10 @@
           "accent_color": null
         }
       }
+      
+    },"building_size": {
+      "size": 7952,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 1700000,
@@ -21606,6 +21825,10 @@
       "lon": -73.969136,
       "neighborhood_name": "Upper East Side"
     },
+    "building_size": {
+      "size": 3120,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -21745,7 +21968,7 @@
     "price": 399000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -21852,6 +22075,10 @@
       "lat": 40.687396,
       "lon": -73.970963,
       "neighborhood_name": "Fort Greene"
+    },
+    "building_size": {
+      "size": 1072,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -22237,6 +22464,10 @@
       "lat": 40.76294,
       "lon": -73.966292,
       "neighborhood_name": "Upper East Side"
+    },
+    "building_size": {
+      "size": 2674,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -22766,6 +22997,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 459000,
     "baths_full": 1,
@@ -22894,11 +23129,15 @@
         }
       }
     },
+    "building_size": {
+      "size": 645,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 569000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "agents": [
       {
         "primary": true,
@@ -23022,6 +23261,10 @@
           "accent_color": null
         }
       }
+    },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
     },
     "prop_status": "for_sale",
     "price": 1349999,
@@ -23288,6 +23531,10 @@
       "lat": 40.851028,
       "lon": -73.929507,
       "neighborhood_name": "Washington Heights"
+    },
+    "building_size": {
+      "size": 2974,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -23579,7 +23826,7 @@
     "price": 125000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 440,
       "units": "sqft"
@@ -23707,6 +23954,10 @@
         }
       }
     },
+    "building_size": {
+      "size": 3720,
+      "units": "sqft"
+    },
     "prop_status": "for_sale",
     "price": 809999,
     "baths_half": 1,
@@ -23831,6 +24082,10 @@
       "lat": 40.727534,
       "lon": -73.816812,
       "neighborhood_name": "Kew Gardens Hills"
+    },
+    "building_size": {
+      "size": 1578,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -24091,6 +24346,10 @@
       "lon": -73.942922,
       "neighborhood_name": "Harlem"
     },
+    "building_size": {
+      "size": 2240,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -24218,6 +24477,9 @@
       "lat": 40.880826,
       "lon": -73.910736,
       "neighborhood_name": "Riverdale"
+    },    "building_size": {
+      "size": 1072,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -24741,6 +25003,10 @@
       "lat": 40.689392,
       "lon": -73.913513,
       "neighborhood_name": "Bushwick"
+    },
+    "building_size": {
+      "size": 3492,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -25297,6 +25563,11 @@
         "dst": true
       }
     ],
+    "building_size": {
+      "size": 3120,
+      "units": "sqft"
+    },
+
     "agents": [
       {
         "primary": true,
@@ -25370,7 +25641,7 @@
       "smarthome_enabled": false
     },
     "photo_count": 1,
-    "image": "https://ap.rdcpix.com/ab02e4c1cd09df40b09b321757aaea9cl-m2437727440x.jpg",
+    "image": "https://ap.rdcpix.com/f00a4a1b1027ba900f0296121ed945c4l-m4175199817x.jpg",
     "page_no": 5,
     "rank": 23,
     "list_tracking": "type|property|data|prop_id|3288965076|list_id|2951175847|page|rank|list_branding|listing_agent|listing_office|advertiser_id|agent|office|broker|property_status|product_code|advantage_code^5|N|0|3|28I5P|17CX8|17BIU|35T|G|SL^^$0|1|2|$3|4|5|6|7|J|8|K|9|$A|L|B|M]|C|$D|N|E|O|F|P]|G|Q|H|R|I|S]]",
@@ -25410,6 +25681,10 @@
       "lat": 40.727073,
       "lon": -73.847433,
       "neighborhood_name": "Forest Hills"
+    },
+    "building_size": {
+      "size": 2310,
+      "units": "sqft"
     },
     "branding": {
       "listing_office": {
@@ -25538,6 +25813,10 @@
       "lon": -73.887981,
       "neighborhood_name": "East New York"
     },
+    "building_size": {
+      "size": 5210,
+      "units": "sqft"
+    },
     "branding": {
       "listing_office": {
         "list_item": {
@@ -25555,7 +25834,7 @@
     "price": 1300000,
     "baths_full": 6,
     "baths": 6,
-    "beds": 14,
+    "beds": 6,
     "agents": [
       {
         "primary": true,
@@ -25954,7 +26233,7 @@
     "price": 595000,
     "baths_full": 1,
     "baths": 1,
-    "beds": 0,
+    "beds": 1,
     "building_size": {
       "size": 485,
       "units": "sqft"
