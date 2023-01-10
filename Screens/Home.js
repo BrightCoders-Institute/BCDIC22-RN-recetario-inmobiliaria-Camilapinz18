@@ -4,8 +4,7 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity,
-  RefreshControl
+  TouchableOpacity
 } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { useSelector } from 'react-redux'
@@ -13,28 +12,15 @@ import HouseCard from '../Components/HouseCard'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import store from '../Redux/store'
 
-//const data = require('../data.json')
-//const data = require('../dataParsed3.json')
-
 export default function App () {
   const navigation = useNavigation()
   const data = useSelector(state => state.data)
   const randCity = useSelector(state => state.location)
-  console.log('randomCity', randCity)
-  //console.log("DATA",data)
   const values = Object.values(data)
-
   const cities = []
-  //let randCity = ''
   let nearHousesToShow = []
-  //values.map(value => cities.push(value.city))
-
   values.map(value => cities.push(value.city))
-  //console.log('CITIES', cities)
-  console.log('length', randCity.lenght)
   nearHousesToShow = values.filter(house => house.address === randCity)
-
-  //console.log('nearHousesToShow', nearHousesToShow)
 
   return (
     <SafeAreaView style={styles.mainContainer}>
@@ -50,7 +36,7 @@ export default function App () {
             <View style={styles.iconContainer}>
               <Ionicons
                 style={styles.icon}
-                name='location' //Nombre que sale en la pagina
+                name='location'
                 size={30}
                 color='black'
               />
@@ -60,7 +46,6 @@ export default function App () {
               <Text style={styles.textLocation}>Current location</Text>
               <Text style={styles.textCurrentCity}>{randCity}</Text>
             </View>
-           
           </View>
           <Text style={styles.smallerText}>Tap to change</Text>
         </TouchableOpacity>
@@ -71,19 +56,17 @@ export default function App () {
         <View style={styles.container}>
           {nearHousesToShow.map(info => {
             return (
-             
-                <HouseCard
-                  key={info.name}
-                  image={info.image}
-                  name={info.name}
-                  address={info.address}
-                  bedrooms={info.bedrooms}
-                  bathrooms={info.bathrooms}
-                  size={info.size}
-                  cost={info.price}
-                  rating={info.rating}
-                />
-             
+              <HouseCard
+                key={info.name}
+                image={info.image}
+                name={info.name}
+                address={info.address}
+                bedrooms={info.bedrooms}
+                bathrooms={info.bathrooms}
+                size={info.size}
+                cost={info.price}
+                rating={info.rating}
+              />
             )
           })}
         </View>
@@ -161,11 +144,10 @@ const styles = StyleSheet.create({
   scrollView: {
     //backgroundColor:'yellow',
   },
-  smallerText:{
-    fontSize:10,
-    color:"gray",
+  smallerText: {
+    fontSize: 10,
+    color: 'gray',
     //backgroundColor:'red',
-    alignSelf:'center',
-    
+    alignSelf: 'center'
   }
 })

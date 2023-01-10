@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import {
 	StyleSheet,
 	Text,
@@ -27,8 +26,7 @@ export default function HouseCard({
 	const values = Object.values(data);
 	const isLiked = values.find(house => house.name === name);
 	const imageThumbnail = image;
-	// Console.log('aIMGENtHUMBNAIÑ', imageThumbnail)
-	// console.log('isLiked', isLiked)
+
 	return (
 		<View style={styles.cardContainer}>
 			<View style={styles.imageContainer}>
@@ -37,7 +35,7 @@ export default function HouseCard({
 					<View style={styles.rating}>
 						<FontAwesome
 							style={styles.icon}
-							name='star' // Nombre que sale en la pagina
+							name='star' 
 							size={9}
 							color='#EFBB15'
 						/>
@@ -51,7 +49,7 @@ export default function HouseCard({
 					<View style={styles.addressContainer}>
 						<Ionicons
 							style={styles.icon}
-							name='location' // Nombre que sale en la pagina
+							name='location' 
 							size={18}
 							color='#8F939E'
 						/>
@@ -60,21 +58,21 @@ export default function HouseCard({
 					<View style={styles.spacesContainer}>
 						<FontAwesome
 							style={styles.icon}
-							name='bed' // Nombre que sale en la pagina
+							name='bed' 
 							size={20}
 							color='#8F939E'
 						/>
 						<Text style={styles.spacesText}>{bedrooms}</Text>
 						<FontAwesome
 							style={styles.icon}
-							name='bath' // Nombre que sale en la pagina
+							name='bath' 
 							size={20}
 							color='#8F939E'
 						/>
 						<Text style={styles.spacesText}>{bathrooms}</Text>
 						<FontAwesome
 							style={styles.icon}
-							name='codepen' // Nombre que sale en la pagina
+							name='codepen' 
 							size={20}
 							color='#8F939E'
 						/>
@@ -82,7 +80,6 @@ export default function HouseCard({
 					</View>
 					<View style={styles.costContainer}>
 						<Text style={styles.costText}>$ {cost}</Text>
-
 						<TouchableOpacity
 							activeOpacity={0.5}
 							onPress={
@@ -109,7 +106,7 @@ export default function HouseCard({
 										borderRadius: 100,
 										marginTop: 5,
 									}}
-									name='heart' // Nombre que sale en la pagina
+									name='heart' 
 									size={12}
 									color='white'
 								/>
@@ -123,7 +120,7 @@ export default function HouseCard({
 										borderRadius: 100,
 										marginTop: 5,
 									}}
-									name='heart' // Nombre que sale en la pagina
+									name='heart' 
 									size={12}
 									color='white'
 								/>

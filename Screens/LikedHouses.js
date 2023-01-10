@@ -1,29 +1,20 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux'
 import HouseCard from '../Components/HouseCard'
-
 import Ionicons from 'react-native-vector-icons/Ionicons'
-//const data = require('../data.json')
-//const data = require('../dataParsed3.json')
 
 export default function LikedHouses () {
   const data = useSelector(state => state.data)
   const values = Object.values(data)
-  //const housesLiked = useSelector(state => state)
-  //const values = Object.values(housesLiked)
   const houseRender = []
-  //console.log('values', values)
-  //console.log('data', data)
-  
+
   values.map(value =>
     value.liked
       ? houseRender.push(data.find(house => house.name === value.name))
       : ''
   )
   const isAny = houseRender.length
-  console.log('ANY', isAny)
   
-  //console.log('houseRender', houseRender)
   return (
     <SafeAreaView style={styles.mainContainer}>
    
