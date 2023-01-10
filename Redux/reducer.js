@@ -1,5 +1,3 @@
-//import { resourceUsage } from 'process'
-
 const data = require('../dataParsed3.json')
 
 export const actionAddLike = {
@@ -14,13 +12,10 @@ export const actionDetermineLocation = {
   type: 'DETERMINE_LOCATION'
 }
 
-export const actionSearchHouse = {
-  type: 'SEARCH_HOUSE'
+//Generate randon Ratings:
+function getRandomInt(min, max) {
+  return (Math.random() * (max - min + 1) + min).toFixed(1)
 }
-/******************************************** */
-
-/****** */
-
 /*************************************** */
 const initialState = []
 data.map(info =>
@@ -34,7 +29,7 @@ data.map(info =>
     size: info.building_size?.size,
     price: info.price,
     image: info.image,
-    rating: 4.5,
+    rating: getRandomInt(3.6,4),
     liked: false
   })
 )
@@ -72,7 +67,7 @@ export const addLikeReducer = (state = modState, action) => {
       return modState
 
     default:
-      return { ...initialState }
+      return modState
   }
 }
 
@@ -104,30 +99,3 @@ export const determineLocationReducer = (state = randCity, action) => {
 }
 
 /*************************************** */
-
-export const searchHouse = (state = initialState, action) => {
-  const searchedHouses = []
-  switch (action.type) {
-    case 'SEARCH_HOUSE':
-      console.log('ESTOY EN SEARCH_HOUSE')
-
-      initialState.map(house =>
-        house.address === action.payload.address &&
-        house.price > action.payload.priceMin &&
-        house.price < action.payload.priceMax &&
-        house.size > action.payload.sizeMin &&
-        house.size < action.payload.sizeMax &&
-        house.bedrooms >= action.payload.bedrooms &&
-        house.bathrooms >= action.payload.bathrooms &&
-        house.rating >= action.payload.rating
-          ? searchedHouses.push(house)
-          : ''
-      )
-
-      // console.log('SEARCHED:HOUSES', searchedHouses)
-      return searchedHouses
-
-    default:
-      return searchedHouses
-  }
-}

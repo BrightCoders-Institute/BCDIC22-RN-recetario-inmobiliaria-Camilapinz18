@@ -4687,7 +4687,7 @@
     "prop_type": "multi_family",
     "address": {
       "city": "Brooklyn",
-      "line": "355 New Lots Ave",
+      "line": "3505 New Lots Ave",
       "postal_code": "11207",
       "state_code": "NY",
       "state": "New York",
@@ -14682,7 +14682,7 @@
     "prop_sub_type": "townhomes",
     "address": {
       "city": "Brooklyn",
-      "line": "382 Barbey St",
+      "line": "3827 Barbey St",
       "postal_code": "11207",
       "state_code": "NY",
       "state": "New York",
@@ -23520,7 +23520,7 @@
     "prop_sub_type": "townhomes",
     "address": {
       "city": "New York",
-      "line": "15 Washington Ter",
+      "line": "14 Washington Ter",
       "postal_code": "10033",
       "state_code": "NY",
       "state": "New York",

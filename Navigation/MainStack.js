@@ -41,7 +41,7 @@ export default function MainStack () {
             style: { padding: 60, height: 1000 }
           }}
         >
-          <Tab.Screen name='Search' component={Search} />
+        
           <Tab.Screen name='Near you' component={Home} />
           <Tab.Screen name='Liked' component={LikedHouses} />
         </Tab.Navigator>

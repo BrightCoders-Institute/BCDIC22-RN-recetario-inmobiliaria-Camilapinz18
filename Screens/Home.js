@@ -40,11 +40,11 @@ export default function App () {
     <SafeAreaView style={styles.mainContainer}>
       <ScrollView style={styles.scrollView}>
         <TouchableOpacity
-           onPress={()=>store.dispatch({
-         type: 'DETERMINE_LOCATION'
-            
-          })}
-          
+          onPress={() =>
+            store.dispatch({
+              type: 'DETERMINE_LOCATION'
+            })
+          }
         >
           <View style={styles.currentLocation}>
             <View style={styles.iconContainer}>
@@ -55,19 +55,23 @@ export default function App () {
                 color='black'
               />
             </View>
+
             <View style={styles.locationTextContainer}>
               <Text style={styles.textLocation}>Current location</Text>
               <Text style={styles.textCurrentCity}>{randCity}</Text>
             </View>
+           
           </View>
+          <Text style={styles.smallerText}>Tap to change</Text>
         </TouchableOpacity>
+
         <View>
           <Text style={styles.locationText}>Near to your location...</Text>
         </View>
         <View style={styles.container}>
           {nearHousesToShow.map(info => {
             return (
-              <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+             
                 <HouseCard
                   key={info.name}
                   image={info.image}
@@ -77,9 +81,9 @@ export default function App () {
                   bathrooms={info.bathrooms}
                   size={info.size}
                   cost={info.price}
-                  rating={4.6}
+                  rating={info.rating}
                 />
-              </TouchableOpacity>
+             
             )
           })}
         </View>
@@ -127,7 +131,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 20,
+    marginTop: 20,
     borderWidth: 1,
     borderColor: 'white',
     borderRadius: 10,
@@ -156,5 +160,12 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     //backgroundColor:'yellow',
+  },
+  smallerText:{
+    fontSize:10,
+    color:"gray",
+    //backgroundColor:'red',
+    alignSelf:'center',
+    
   }
 })
