@@ -1,5 +1,7 @@
 //import { resourceUsage } from 'process'
 
+import store from './store'
+
 const data = require('../dataParsed3.json')
 
 export const actionAddLike = {
@@ -17,10 +19,16 @@ export const actionDetermineLocation = {
 export const actionSearchHouse = {
   type: 'SEARCH_HOUSE'
 }
+
+export const actionUpdateSearchHouse = {
+  type: 'UPDATE_SEARCH_HOUSE'
+}
 /******************************************** */
 
 /****** */
-
+function getRandomInt(min, max) {
+  return (Math.random() * (max - min + 1) + min).toFixed(1)
+}
 /*************************************** */
 const initialState = []
 data.map(info =>
@@ -34,7 +42,7 @@ data.map(info =>
     size: info.building_size?.size,
     price: info.price,
     image: info.image,
-    rating: 4.5,
+    rating: getRandomInt(3.6,4),
     liked: false
   })
 )
@@ -72,7 +80,7 @@ export const addLikeReducer = (state = modState, action) => {
       return modState
 
     default:
-      return { ...initialState }
+      return modState
   }
 }
 
@@ -104,14 +112,20 @@ export const determineLocationReducer = (state = randCity, action) => {
 }
 
 /*************************************** */
+const modState2=[...modState]
+let searchedHousesMod=[]
+export const searchHouse = (state = modState2, action) => {
 
-export const searchHouse = (state = initialState, action) => {
-  const searchedHouses = []
+  let searchedHouses = []
   switch (action.type) {
     case 'SEARCH_HOUSE':
       console.log('ESTOY EN SEARCH_HOUSE')
+      console.log("datos que llegan",action.payload.address)
+      console.log("datos que llegan",action.payload.priceMin)
+      console.log("datos que llegan",action.payload.priceMax)
+      console.log("datos que llegan",action.payload.sizeMax)
 
-      initialState.map(house =>
+      modState2.map(house =>
         house.address === action.payload.address &&
         house.price > action.payload.priceMin &&
         house.price < action.payload.priceMax &&
@@ -124,8 +138,45 @@ export const searchHouse = (state = initialState, action) => {
           : ''
       )
 
-      // console.log('SEARCHED:HOUSES', searchedHouses)
+      searchedHouses = searchedHouses.map(house => {
+        if (house.name === action.payload.name) {
+          console.log('ESTOY EN IF UPDATE_SEARCH_HOUSE')
+          return {
+            ...house,
+            liked: true
+          }
+        }
+        return house
+      })
+      console.log("searchedHousesMod",searchedHousesMod)
+
+     // const resultsToShow
+      console.log('SEARCHED:HOUSES', searchedHouses)
+      searchedHousesMod=[...searchedHouses]
       return searchedHouses
+
+
+      case 'UPDATE_SEARCH_HOUSE':
+        
+        //console.log(searchedHousesMod.liked)
+        console.log("ID",action.payload.name)
+
+        
+
+        searchedHouses = searchedHouses.map(house => {
+          if (house.name === action.payload.name) {
+            console.log('ESTOY EN IF UPDATE_SEARCH_HOUSE2')
+            return {
+              ...house,
+              liked: true
+            }
+          }
+          return house
+        })
+        console.log("searchedHousesMod",searchedHousesMod)
+
+        return searchedHousesMod
+
 
     default:
       return searchedHouses

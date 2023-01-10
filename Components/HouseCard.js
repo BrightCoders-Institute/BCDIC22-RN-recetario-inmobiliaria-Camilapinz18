@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 import FontAwesome from '@expo/vector-icons/FontAwesome'
 import Ionicons from '@expo/vector-icons/Ionicons'
+
 import { useSelector } from 'react-redux'
 import store from '../Redux/store'
 
@@ -29,7 +30,7 @@ export default function HouseCard ({
 
   const values = Object.values(data)
   //console.log('DATAVALUES', values)
-  //console.log('HOUSES LIKED:', values)
+ // console.log('HOUSES LIKED:', values)
   const isLiked = values.find(house => house.name === name)
   //values.map(house => console.log(house.name))
   //console.log("NAME,",address)
@@ -54,12 +55,13 @@ export default function HouseCard ({
 
         <View style={styles.infoContainer}>
           <Text style={styles.nameText}>{name}</Text>
+
           <View style={styles.addressContainer}>
             <Ionicons
               style={styles.icon}
-              name='location-outline' //Nombre que sale en la pagina
+              name='location' //Nombre que sale en la pagina
               size={18}
-              color='black'
+              color='#8F939E'
             />
             <Text style={styles.addressText}>{address}</Text>
           </View>
@@ -68,21 +70,21 @@ export default function HouseCard ({
               style={styles.icon}
               name='bed' //Nombre que sale en la pagina
               size={20}
-              color='#7C7D7D'
+              color='#8F939E'
             />
             <Text style={styles.spacesText}>{bedrooms}</Text>
             <FontAwesome
               style={styles.icon}
               name='bath' //Nombre que sale en la pagina
               size={20}
-              color='#7C7D7D'
+              color='#8F939E'
             />
             <Text style={styles.spacesText}>{bathrooms}</Text>
             <FontAwesome
               style={styles.icon}
-              name='bed' //Nombre que sale en la pagina
+              name='codepen' //Nombre que sale en la pagina
               size={20}
-              color='#7C7D7D'
+              color='#8F939E'
             />
             <Text style={styles.spacesText}>{size} ft</Text>
           </View>
@@ -104,7 +106,10 @@ export default function HouseCard ({
                         payload: { name }
                       })
               }
-              //onPressOut={console.log('LIKED', isLiked.liked)}
+              //  onPressOut={()=>store.dispatch({
+              //    type:'SEARCH_HOUSE'
+                 
+              //  })}
             >
               {isLiked.liked ? (
                 <FontAwesome
@@ -200,8 +205,13 @@ const styles = StyleSheet.create({
   },
   nameText: {
     color: '#121222',
-    fontSize: 18
+    fontSize: 18,
+    //backgroundColor: 'red',
+    height: 24,
+    width: 200,
+    marginBottom:3
   },
+
   addressContainer: {
     //backgroundColor: 'green',
     display: 'flex',

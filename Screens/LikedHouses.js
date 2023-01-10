@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native'
 import { useSelector } from 'react-redux'
 import HouseCard from '../Components/HouseCard'
-import SearchBar from '../Components/SearchBar'
+
 import Ionicons from 'react-native-vector-icons/Ionicons'
 //const data = require('../data.json')
 //const data = require('../dataParsed3.json')
@@ -26,9 +26,7 @@ export default function LikedHouses () {
   //console.log('houseRender', houseRender)
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <View style={styles.searchContainer}>
-        <SearchBar />
-      </View>
+     
       <ScrollView style={styles.scrollView}>
         <View style={styles.container}>
           {isAny === 0 ? (
@@ -49,7 +47,7 @@ export default function LikedHouses () {
           {houseRender.map(info => {
             return (
               <HouseCard
-                key={info.name}
+                key={info.id}
                   image={info.image}
                   name={info.name}
                   address={info.address}

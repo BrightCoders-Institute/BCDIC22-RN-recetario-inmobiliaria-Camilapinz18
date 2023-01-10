@@ -67,9 +67,9 @@ export default function App () {
         <View style={styles.container}>
           {nearHousesToShow.map(info => {
             return (
-              <TouchableOpacity onPress={() => navigation.navigate('Details')}>
+             
                 <HouseCard
-                  key={info.name}
+                  key={info.id}
                   image={info.image}
                   name={info.name}
                   address={info.address}
@@ -77,9 +77,9 @@ export default function App () {
                   bathrooms={info.bathrooms}
                   size={info.size}
                   cost={info.price}
-                  rating={4.6}
+                  rating={info.rating}
                 />
-              </TouchableOpacity>
+            
             )
           })}
         </View>

@@ -11,7 +11,7 @@ import {
 } from 'react-native'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
-import CustomButton from '../Components/CustomButton'
+//import TextInputMask from 'react-native-text-input-mask';
 import store from '../Redux/store'
 import HouseCard from '../Components/HouseCard'
 
@@ -29,10 +29,11 @@ export default function Search () {
 
   const data = useSelector(state => state.data)
   const results = useSelector(state => state.search)
+  //results.map(r=>console.log("RRR",r))
   console.log('RESULTSA', results)
   const values = Object.values(data)
   //console.log('values', values)
-  console.log(priceMin, priceMax)
+  //console.log(priceMin, priceMax)
   //Extaer solo ciudades:
   const cities = []
 
@@ -40,24 +41,19 @@ export default function Search () {
   let citiesToShow = [...new Set(cities)]
 
   citiesToShow.sort()
-  console.log('YYY', citiesToShow)
+  //console.log('YYY', citiesToShow)
 
-  console.log('cities', cities)
+  //console.log('cities', cities)
 
   function sendValues () {
     console.log('pricemaxout', priceMax)
     if (selectedCity === '') {
       alert('You must select a location')
+    } else if (priceMax === 0||priceMax === undefined||priceMax === '') {
+      alert('The maximum price cant be zero')
+    } else if (sizeMax === 0||sizeMax === undefined||sizeMax === '') {
+      alert('The maximum size cant be zero')
     } else {
-      if (priceMax === 0) {
-        setPriceMax(current => 50000000)
-        console.log('pricemax', priceMax)
-      }
-      if (sizeMax < 1) {
-        setSizeMax(current => 50000)
-        console.log('sizemax', sizeMax)
-      }
-
       setsearchModalVisible(true)
       store.dispatch({
         type: 'SEARCH_HOUSE',
@@ -72,9 +68,23 @@ export default function Search () {
           rating: counterRating
         }
       })
-
-      //console.log('SEARCHOBJECT', searchObject)
     }
+
+    // store.dispatch({
+    //   type: 'SEARCH_HOUSE',
+    //   payload: {
+    //     address: selectedCity,
+    //     priceMin: priceMin,
+    //     priceMax: priceMax,
+    //     sizeMin: sizeMin,
+    //     sizeMax: sizeMax,
+    //     bedrooms: counterBedrooms,
+    //     bathrooms: counterBathrooms,
+    //     rating: counterRating
+    //   }
+    // })
+
+    //console.log('SEARCHOBJECT', searchObject)
   }
 
   const searchData = () => {
@@ -166,7 +176,6 @@ export default function Search () {
               transparent={true}
               visible={modalVisible}
               onRequestClose={() => {
-                alert('Modal cities.')
                 setModalVisible(!modalVisible)
               }}
             >
@@ -222,10 +231,6 @@ export default function Search () {
                 keyboardType='number-pad'
                 onChangeText={value => setPriceMax(value)}
               ></TextInput>
-              <Text>
-                {priceMax}
-                {priceMin}
-              </Text>
             </View>
           </View>
           <Text style={styles.titleText}>Area</Text>
@@ -236,7 +241,6 @@ export default function Search () {
                 style={styles.textInput}
                 placeholder='0'
                 keyboardType='number-pad'
-                onChangeText={value => setSizeMin(value)}
               ></TextInput>
             </View>
             <View style={styles.inputContainer}>
@@ -247,10 +251,6 @@ export default function Search () {
                 style={styles.textInput}
                 onChangeText={value => setSizeMax(value)}
               ></TextInput>
-              <Text>
-                {sizeMax}
-                {sizeMin}
-              </Text>
             </View>
           </View>
 
@@ -321,13 +321,14 @@ export default function Search () {
               </View>
             </View>
           </View>
-          <Pressable
+          <TouchableOpacity
             // style={[styles.button, styles.buttonClose]}
             // onPress={() => setsearchModalVisible(!searchModalVisible)}
             onPress={() => sendValues()}
+            style={styles.buttonSearch}
           >
-            <Text>Search</Text>
-          </Pressable>
+            <Text style={styles.buttonText}>Search</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -342,7 +343,8 @@ const styles = StyleSheet.create({
   resultsContainer: {
     display: 'flex',
     alignItems: 'center',
-    flex: 1
+    flex: 1,
+    backgroundColor: '#E5E5E5'
   },
   mainContainer: {
     display: 'flex',
@@ -357,16 +359,16 @@ const styles = StyleSheet.create({
     borderColor: '#CACACA'
   },
   menuContainer: {
-    //backgroundColor: 'red',
+    // backgroundColor: 'red',
     display: 'flex',
 
     borderRadius: 10,
-    marginTop: 50,
+    marginTop: 35,
     width: '80%'
     //width: '87%',
   },
   selectLocation: {
-    // backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#CACACA',
@@ -440,16 +442,16 @@ const styles = StyleSheet.create({
   areaContainer: {
     display: 'flex',
     flexDirection: 'row',
-    //backgroundColor: 'yellow',
-    width: '90%',
+    // backgroundColor: 'yellow',
+    width: '80%',
     justifyContent: 'center'
   },
   inputContainer: {
     display: 'flex',
     flexDirection: 'column',
     //backgroundColor: 'blue',
-    // width: 100,
-    margin: 10
+    //width: '80%',
+    margin: 6
   },
   textInput: {
     //backgroundColor:'green',
@@ -463,11 +465,11 @@ const styles = StyleSheet.create({
   },
   inputText: {
     fontSize: 13,
-    marginBottom: 1
+    marginBottom: 10
   },
   titleText: {
-    //backgroundColor:'blue',
-    width: '78%',
+    // backgroundColor:'blue',
+    width: '80%',
     fontWeight: 'bold',
     fontSize: 16
     //marginBottom:10
@@ -475,10 +477,10 @@ const styles = StyleSheet.create({
   roomsContainer: {
     display: 'flex',
     flexDirection: 'column',
-    //backgroundColor: 'yellow',
+    //backgroundColor: 'green',
     width: '80%'
     //justifyContent:'center',
-    // alignContent:'space-evenly'
+    // alignContent:'space-evenly',
   },
   bedroomsContainer: {
     display: 'flex',
@@ -509,6 +511,18 @@ const styles = StyleSheet.create({
     //
   },
   addButtonsControls: {
+    fontWeight: 'bold'
+  },
+  buttonSearch: {
+    backgroundColor: '#00B074',
+    padding: 10,
+    marginTop: 25,
+    borderRadius: 10,
+    width: 100,
+    marginBottom: 25
+  },
+  buttonText: {
+    textAlign: 'center',
     fontWeight: 'bold'
   }
 })
