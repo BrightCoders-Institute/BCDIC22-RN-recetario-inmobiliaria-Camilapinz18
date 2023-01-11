@@ -14,33 +14,38 @@ export const actionDetermineLocation = {
 };
 
 // Generate randon Ratings:
-function getRandomInt(min, max) {
-  return (Math.random() * (max - min + 1) + min).toFixed(1);
-}
+export const getRandomInt = (min, max) => {
+  return Number((Math.random() * (max - min + 1) + min).toFixed(1));
+};
 
-const initialState = [];
-data.map((info) =>
-  initialState.push({
-    id: info.property_id,
-    name: info.address.line,
-    city: info.address.city,
-    address: info.address.city,
-    bedrooms: info.beds,
-    bathrooms: info.baths,
-    size: info.building_size?.size,
-    price: info.price,
-    image: info.image,
-    rating: getRandomInt(3.6, 4),
-    liked: false,
-  }),
-);
+export const generateInitialState = (data) => {
+  const initialState = [];
+  data.map((info) =>
+    initialState.push({
+      id: info.property_id,
+      name: info.address.line,
+      city: info.address.city,
+      address: info.address.city,
+      bedrooms: info.beds,
+      bathrooms: info.baths,
+      size: info.building_size?.size,
+      price: info.price,
+      image: info.image,
+      rating: getRandomInt(3.6, 4),
+      liked: false,
+    }),
+  );
+  return initialState;
+};
 
-let modState = [...initialState];
+let modState = generateInitialState(data);
+modState = [...modState];
 
 export const addLikeReducer = (state = modState, action) => {
   switch (action.type) {
     case 'ADD_LIKED_HOUSE':
       modState = modState.map((house) => {
+        // console.log('name', action.payload)
         if (house.name === action.payload.name) {
           return {
             ...house,
@@ -72,10 +77,21 @@ export const addLikeReducer = (state = modState, action) => {
 
 let randCity = '';
 const cities = [];
-initialState.map((value) => cities.push(value.city));
-const citiesToShow=[...new Set(cities)];
-citiesToShow.sort();
-randCity = citiesToShow[Math.round(Math.random() * citiesToShow.length)];
+let citiesToShow = [];
+export const generateCitiesArray = (modState) => {
+  modState.map((value) => cities.push(value.city));
+  citiesToShow = [...new Set(cities)];
+  citiesToShow.sort();
+  return citiesToShow;
+};
+
+export const generateRandomCity = (citiesToShow) => {
+  randCity = citiesToShow[Math.round(Math.random() * citiesToShow.length)];
+  return randCity;
+};
+
+generateCitiesArray(modState);
+generateRandomCity(citiesToShow);
 
 export const determineLocationReducer = (state = randCity, action) => {
   switch (action.type) {
@@ -88,5 +104,3 @@ export const determineLocationReducer = (state = randCity, action) => {
       return randCity;
   }
 };
-
-

@@ -13,6 +13,7 @@ export default function LikedHouses () {
       ? houseRender.push(data.find(house => house.name === value.name))
       : ''
   )
+ console.log("HOUSERENDER",houseRender)
   const isAny = houseRender.length
   
   return (
