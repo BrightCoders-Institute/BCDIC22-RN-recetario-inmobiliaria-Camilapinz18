@@ -16,6 +16,10 @@ export default function MainStack () {
         <Tab.Navigator
           initialRouteName={'Near you'}
           screenOptions={({ route }) => ({
+            activeTintColor: '#00B074',
+            inactiveTintColor: 'grey',
+            labelStyle: { paddingBottom: 10, fontSize: 10 },
+            style: { padding: 60, height: 1000 },
             tabBarIcon: ({ focused, color, size }) => {
               let iconName
               let routeName = route.name
@@ -27,12 +31,6 @@ export default function MainStack () {
               return <Ionicons name={iconName} size={size} color={color} />
             }
           })}
-          tabBarOptions={{
-            activeTintColor: '#00B074',
-            inactiveTintColor: 'grey',
-            labelStyle: { paddingBottom: 10, fontSize: 10 },
-            style: { padding: 60, height: 1000 }
-          }}
         >
           <Tab.Screen name='Near you' component={Home} />
           <Tab.Screen name='Liked' component={LikedHouses} />
