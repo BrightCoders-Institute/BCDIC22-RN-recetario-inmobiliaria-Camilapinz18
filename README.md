@@ -2,17 +2,41 @@
 
 # App Inmobiliaria
 
-- [Ver instrucciones](./instructions.md)
+## Tabla de contenidos
 
-This README would normally document whatever steps are necessary to get the application up and running.
+- [Descripción](#Descripción)
+- [Uso](#Uso)
+  - [Instalar dependencias](#Instalar-dependencias)
+  - [Ejecutar](#Ejecutar)
+  - [Pruebas](#Pruebas)
+- [Créditos](#Créditos)
+- [Insignias](#Insignias)
 
-Things you may want to cover:
+## Descripción.
+    Real State App
+    
+# Uso
+### Instalar dependencias
 
-- Title or Project Name
-- Table of contents
-- Description. A brief description of what the project is about
-- How to Install and Run the Project.
-- How to Use the Project.
-- Credits
-- Badges
-  
+
+npm install
+
+
+### Ejecutar
+
+
+npm start
+
+
+### Pruebas
+
+
+npm test
+
+
+## Créditos
+
+- [@Camilapinz18](https://github.com/Camilapinz18)
+    
+## Insignias
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/05d5296a963f4ba3839bb952405a897d)](https://www.codacy.com/gh/BrightCoders-Institute/BCDIC22-RN-recetario-inmobiliaria-Camilapinz18/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BrightCoders-Institute/BCDIC22-RN-recetario-inmobiliaria-Camilapinz18&amp;utm_campaign=Badge_Grade)
