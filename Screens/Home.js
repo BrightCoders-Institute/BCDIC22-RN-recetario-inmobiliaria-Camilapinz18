@@ -95,7 +95,8 @@ const styles = StyleSheet.create({
   locationTextContainer: {
     display: 'flex',
     //backgroundColor: 'blue',
-    marginLeft: 20
+    marginLeft: 20,
+    
   },
   textLocation: {
     color: 'black',
@@ -109,7 +110,8 @@ const styles = StyleSheet.create({
   currentLocation: {
     backgroundColor: 'white',
     alignSelf: 'center',
-    width: '60%',
+    //width: '60%',
+    maxWidth:600,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',

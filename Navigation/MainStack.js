@@ -1,6 +1,5 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { NavigationContainer } from '@react-navigation/native'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import  {NavigationContainer} from '@react-navigation/native'
+import  {createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Provider } from 'react-redux'
 import store from '../Redux/store'
 import Ionicons from 'react-native-vector-icons/Ionicons'

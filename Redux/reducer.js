@@ -93,12 +93,13 @@ export const generateRandomCity = (citiesToShow) => {
 generateCitiesArray(modState);
 generateRandomCity(citiesToShow);
 
-
 export const determineLocationReducer = (state = randCity, action) => {
   switch (action.type) {
     case 'DETERMINE_LOCATION':
-      const newRandCity = cities[Math.round(Math.random() * cities.length)];
+      const newRandCity =
+        citiesToShow[Math.round(Math.random() * citiesToShow.length)];
       randCity = newRandCity;
+
       return newRandCity;
 
     default:
