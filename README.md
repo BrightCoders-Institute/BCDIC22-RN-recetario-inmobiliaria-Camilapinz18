@@ -2,11 +2,7 @@
 
 # Signature Real State App
 
-![Splash screen](design/SplashScreen.png)
-![Near you screen](design/Near you screen.png)
-![Empty Liked screen](design/Liked Screen empty.png)
-![Liked screen](design/Liked Screen.png)
-
+![App_preview_image](design/Picture3.png)
 
 ## Contents Table
 
