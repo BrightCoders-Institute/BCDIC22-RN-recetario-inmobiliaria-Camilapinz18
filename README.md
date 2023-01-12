@@ -2,6 +2,12 @@
 
 # Signature Real State App
 
+![Splash screen](design/SplashScreen.png)
+![Near you screen](design/Near you screen.png)
+![Empty Liked screen](design/Liked Screen empty.png)
+![Liked screen](design/Liked Screen.png)
+
+
 ## Contents Table
 
 - [Description](#Description)
@@ -19,17 +25,23 @@
       -Liked Houses Screen: Shows the liked properties. The properties can also be unliked.
     
 # Use
+
 ### Install dependencies
 
 npm install
 
+
 ### Run
+
 
 npm start
 
+
 ### Tests
 
+
 npm test
+
 
 ## Credits
 
